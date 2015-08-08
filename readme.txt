@@ -2,7 +2,7 @@
 Contributors: pipdig
 Tags: posts, permalink, link image, blog, thumbnail, photo, photography
 Requires at least: 2.6
-Tested up to: 4.2.2
+Tested up to: 4.3
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html

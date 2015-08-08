@@ -26,13 +26,14 @@ if (!defined('ABSPATH')) {
 	exit;
 }
 
-
-function pipdig_link_image_to_post($content){
-	if (!is_single() && !is_page()){
-		$old = '/(<img[^>]*\/>)/';
-		$new = '<a href="'.get_permalink().'">$1</a>';
-		$content = preg_replace($old, $new, $content, 1);
+if (!function_exists('pipdig_link_image_to_post')) {
+	function pipdig_link_image_to_post($content){
+		if (!is_single() && !is_page()){
+			$old = '/(<img[^>]*\/>)/';
+			$new = '<a href="'.get_permalink().'">$1</a>';
+			$content = preg_replace($old, $new, $content, 1);
+		}
+		return $content;
 	}
-	return $content;
+	add_filter('the_content', 'pipdig_link_image_to_post');
 }
-add_filter('the_content', 'pipdig_link_image_to_post');
